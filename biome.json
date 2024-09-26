@@ -20,13 +20,17 @@
   "linter": {
     "enabled": true,
     "rules": {
+      "a11y": {
+        "useValidAnchor": "off"
+      },
       "suspicious": {
         "noArrayIndexKey": "off",
         "noCommentText": "off"
       },
       "recommended": true,
       "style": {
-        "noNonNullAssertion": "off"
+        "noNonNullAssertion": "off",
+        "useSelfClosingElements": "off"
       }
     }
   },
