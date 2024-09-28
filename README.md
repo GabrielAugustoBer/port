@@ -101,4 +101,4 @@ Sinta-se à vontade para entrar em contato comigo através do e-mail:
 
 ## Licença
 
-Este projeto está licenciado sob a MIT License - veja o arquivo [LICENSE](LICENSE) para detalhes.
+Este projeto está licenciado sob a MIT License.
