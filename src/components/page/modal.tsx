@@ -1,3 +1,5 @@
+import { useLanguage } from "@/context/LanguageContext"
+
 interface ModalProps {
   isOpen: boolean // Estado que determina se o modal está aberto ou não
   onClose: () => void // Função para fechar o modal
@@ -5,6 +7,8 @@ interface ModalProps {
 }
 
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose, onConfirm }) => {
+  const { language } = useLanguage() // Usando o contexto de idioma
+
   // Se o modal não estiver aberto, não renderiza nada
   if (!isOpen) return null
 
@@ -13,17 +17,23 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, onConfirm }) => {
       {/* Conteúdo do Modal */}
       <div className="bg-white p-6 rounded-lg shadow-lg text-center">
         {/* Título do Modal */}
-        <h2 className="text-lg font-semibold mb-4">Confirmar Download</h2>
+        <h2 className="text-lg font-semibold mb-4">
+          {language === "en" ? "Confirm Download" : "Confirmar Download"}
+        </h2>
         {/* Mensagem de confirmação */}
-        <p className="mb-6">Você deseja baixar o seu CV?</p>
+        <p className="mb-6">
+          {language === "en"
+            ? "Do you want to download your CV?"
+            : "Você deseja baixar o seu CV?"}
+        </p>
 
         {/* Botão para confirmar a ação */}
         <button
           type="button"
           onClick={onConfirm}
-          className="bg-[#7477FF] text-white px-4 py-2 rounded-md mr-4 hover:bg-[#5a5cfb] transition duration-300"
+          className="bg-[#7477FF] text-white px-4 py-2 rounded-md mr-4 hover:bg-[#5a5cfb] transition duration-250"
         >
-          Sim, baixar
+          {language === "en" ? "Yes, download" : "Sim, baixar"}
         </button>
 
         {/* Botão para cancelar a ação */}
@@ -32,7 +42,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, onConfirm }) => {
           onClick={onClose}
           className="bg-gray-300 text-gray-700 px-4 py-2 rounded-md hover:bg-gray-400 transition duration-300"
         >
-          Cancelar
+          {language === "en" ? "Cancel" : "Cancelar"}
         </button>
       </div>
     </div>

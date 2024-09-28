@@ -1,3 +1,4 @@
+import { LanguageProvider } from "@/context/LanguageContext"
 import { NavBar } from "./components/page/navbar"
 import { Home } from "@/components/page/home"
 import { AboutMe } from "@/components/page/aboutMe"
@@ -8,12 +9,14 @@ import { Footer } from "@/components/page/footer"
 export function App() {
   return (
     <>
-      <NavBar />
-      <Home />
-      <AboutMe />
-      <Projects />
-      <ContactMe />
-      <Footer />
+      <LanguageProvider>
+        <NavBar />
+        <Home />
+        <AboutMe />
+        <Projects />
+        <ContactMe />
+        <Footer />
+      </LanguageProvider>
     </>
   )
 }
