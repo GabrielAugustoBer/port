@@ -94,7 +94,7 @@ Sinta-se à vontade para entrar em contato comigo através do e-mail:
 
 4. Inicie o servidor de desenvolvimento:
    ```bash
-   npm start
+   npm run dev
    ```
 
 5. Acesse o projeto em seu navegador na URL: `http://localhost:3000`.
